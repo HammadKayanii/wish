@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 1st Anniversary</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #000000, #2c0000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffdddd;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-top: 50px;
+      text-shadow: 0 0 15px #aa0000;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 10px 0 40px;
+      color: #ff4d4d;
+      text-shadow: 0 0 10px #660000;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      display: inline-block;
+      margin: 30px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 160px;
+      background: #8B0000;
+      border-radius: 100px 100px 0 0;
+      top: 0;
+      left: 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      left: auto;
+      right: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    .names {
+      font-size: 2.5rem;
+      color: #ffcccc;
+      margin-top: 20px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #770000;
+    }
+
+    .message {
+      max-width: 750px;
+      margin: 40px auto;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      background: rgba(255, 0, 0, 0.08);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid #550000;
+    }
+
+    .btn-container {
+      margin-top: 40px;
+    }
+
+    .btn {
+      background: #a80000;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #8b0000;
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1a0000;
+      color: #ffcccc;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #550000;
+      z-index: 1000;
+      font-size: 1.5rem;
+      max-width: 85%;
+    }
+
+    .popup h3 {
+      color: #ff4d4d;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #550000;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Happy 1st Anniversary 💖</h1>
+  <h2>From Hammad to His Love, Nashrah</h2>
+
+  <div class="heart"></div>
+
+  <div class="names">Hammad ❤ Nashrah</div>
+  <div class="names">H + N</div>
+
+  <div class="message">
+    One year ago, all our memories started collecting inside each other's hearts.<br><br>
+    From small smiles to deep conversations, every moment with you has been nothing short of a dream.<br><br>
+    Thank you for being my peace, my joy, and the love of my life.<br>
+    I promise to love you more every single day, Nashrah. ❤<br><br>
+    — With all my heart, Hammad
+  </div>
+
+  <div class="btn-container">
+    <button class="btn" onclick="showPopup('popup1')">🎁 A Little Surprise</button>
+    <button class="btn" onclick="showPopup('popup2')">💌 A Wish from Me</button>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+  <div class="popup" id="popup1">
+    <h3>For You, Nashrah 💖</h3>
+    You’ve made this past year the most beautiful chapter of my life. Every day spent with you is a memory I treasure forever. I can’t wait to make more with you, my love. 💍
+    <br/><br/>Forever yours,<br/>— Hammad
+    <br/><button class="close-btn" onclick="hidePopup()">Close</button>
+  </div>
+
+  <div class="popup" id="popup2">
+    <h3>My Wish for You 🌹</h3>
+    I wish you endless happiness, comfort, and love — not just today, but every day we breathe together. You deserve a life filled with warmth, laughter, and passion — and I promise to give it all to you.
+    <br/><br/>With love always,<br/>— Hammad
+    <br/><button class="close-btn" onclick="hidePopup()">Close</button>
+  </div>
+
+  <script>
+    function showPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function hidePopup() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('popup1').style.display = 'none';
+      document.getElementById('popup2').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
